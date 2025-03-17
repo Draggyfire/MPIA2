@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "EngineUtils.h"
 #include "EnemyAIController.h"
+#include "EngineUtils.h"
 
 TArray<APathNode*> AEnemyAIController::FindPath(APathNode* Start, APathNode* Goal)
 {
@@ -23,7 +23,7 @@ TArray<APathNode*> AEnemyAIController::FindPath(APathNode* Start, APathNode* Goa
         }
     }
 
-    // Mettre la distance du start à 0
+    // Mettre la distance du start ï¿½ 0
     Distances[Start] = 0.f;
 
     while (Unvisited.Num() > 0)
@@ -55,7 +55,7 @@ TArray<APathNode*> AEnemyAIController::FindPath(APathNode* Start, APathNode* Goa
         {
             if (!Neighbor || Visited.Contains(Neighbor)) continue;
 
-            // Ajout pour éviter crash : forcer ajout si jamais le voisin n'est pas dans Distances
+            // Ajout pour ï¿½viter crash : forcer ajout si jamais le voisin n'est pas dans Distances
             if (!Distances.Contains(Neighbor))
             {
                 Distances.Add(Neighbor, FLT_MAX);
@@ -76,7 +76,7 @@ TArray<APathNode*> AEnemyAIController::FindPath(APathNode* Start, APathNode* Goa
 
     if (!Previous.Contains(Goal))
     {
-        // Aucun chemin trouvé
+        // Aucun chemin trouvï¿½
         return {};
     }
 
